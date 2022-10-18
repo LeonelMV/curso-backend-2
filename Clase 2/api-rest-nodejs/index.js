@@ -5,11 +5,12 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const handlersCallbacks = [];
+handlersCallbacks['/favicon.ico'] = [];
 handlersCallbacks['/users'] = [];
 handlersCallbacks['/users']['GET'] = userController.getUsers;
 handlersCallbacks['/users']['POST'] = userController.createUser;
 handlersCallbacks['/users']['PUT'] = userController.updateUser;
-handlersCallbacks['/users']['DELETE'] = userController.createUser;
+handlersCallbacks['/users']['DELETE'] = userController.deleteUser;
 
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
